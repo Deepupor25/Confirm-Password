@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+    <style>
+        body{
+            background-color: rgb(235, 195, 144);
+        }
+        #input1, #input2{
+            padding: 10px;
+            width: 300px;
+            border: none;
+            /* border-radius: 10px; */
+            background-color: antiquewhite;
+            align-items: center;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: xx-large;
+            font-style: italic;
+        }
+        #butt{
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(100, 64, 20);
+            color: white;
+            width: 645px;
+            align-items: center;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: xx-large;
+            font-style: italic;
+        }
+        #one, #two{
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        #entire{
+            display: flex;
+            justify-content: space-around;
+            width: 900px;
+            /* background-color: pink; */
+            align-items: center;
+            text-align: center;
+            margin-left: 500px;
+
+        }
+        #butt{
+            margin-left: 650px;
+        }
+        h1{
+            text-align: center;
+            color: rgb(54, 36, 12);
+        }
+    </style>
+</head>
+<body>
+    <h1>Se ayewo nomba ikoko re wo ni ofe</h1>
+   <div id="entire">
+        <div id="one">
+            <input id="input1" type="text" placeholder="Type Password">
+            <button id="button" onclick="toggle()" style="background-color: antiquewhite; height: 57px; border: none;"><iconify-icon icon="ion:eye" style="color: black;"></iconify-icon></button>
+
+        </div>
+        <div id="two">
+            <input id="input2" type="text" placeholder="Confirm Password"> <br> <br>
+            <button id="bttn" onclick="Two()" style="background-color: antiquewhite; height: 57px; border: none;"><iconify-icon icon="ion:eye" style="color: black;"></iconify-icon></button>
+
+        </div>
+   </div> <br>
+    <button id="butt" onclick="say()">Check Password</button>
+
+
+    <script>
+        let input1 = document.getElementById('input1')
+        let input2 = document.getElementById('input2')
+        let button = document.getElementById('button')
+        let buttonTwo = document.getElementById('buttonTwo')
+
+        function say(){
+            if (input1.value == input2.value){
+                alert('Correct password')
+            }
+            else{
+                alert('Incorrect password')
+            }
+        }
+
+        function toggle(){
+        input1.type == 'password' ? input1.type = 'text' : input1.type = 'password'
+        input1.type == 'password' ? button.innerHTML = `<iconify-icon icon="mdi:eye-off" style="color: black;"></iconify-icon>` : button.innerHTML = `<iconify-icon icon="ion:eye" style="color: black;"></iconify-icon>`
+    }
+
+        function Two(){
+            input2.type == 'password' ? input2.type = 'text' : input2.type = 'password'
+        input2.type == 'password' ? buttonTwo.innerHTML = `<iconify-icon icon="mdi:eye-off" style="color: black;"></iconify-icon>` : buttonTwo.innerHTML = `<iconify-icon icon="ion:eye" style="color: black;"></iconify-icon>`
+    
+        }
+    </script>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+</html>
